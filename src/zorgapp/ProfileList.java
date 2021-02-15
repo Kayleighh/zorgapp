@@ -5,9 +5,10 @@ import java.util.ArrayList;
 public class ProfileList
 {
 	/*
-	 * In deze klasse wordt een ArrayList gemaakt, om de profiles op te slaan
+	 * In deze klasse wordt een ArrayList gemaakt om de profiles op te slaan
 	 */
 	private ArrayList<Profile> prof = new ArrayList<>();
+	private Profile profile = new Profile();
 
 	ProfileList()
 	{
@@ -28,7 +29,7 @@ public class ProfileList
 	//heeft een parameter van het type int, maar stuurt het datatype Profile terug.
 	public Profile get(int index) 
 	{
-		//for loop om de date uit de arraylist te krijgen
+		//for loop om de data uit de arraylist te krijgen
 		int i = 0;
 		Profile test = prof.get(i);
 		for(i = 0; i <= 0; i++) {

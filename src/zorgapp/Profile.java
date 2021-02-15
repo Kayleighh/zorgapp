@@ -3,16 +3,16 @@ package zorgapp;
 import java.util.Scanner;
 
 public class Profile {
-/*Deze beschikt over alle functies die in ZorgApp worden aangeroepen */
+
 	private String FirstName;
 	private String LastName;
 	private int age;
 	private double length;
 	private double weight;
-	//Nieuwe scanner om de console mee af te lezen (uit de les van dinsdag 9 feb)
+	
 	private Scanner scanner = new Scanner(System.in);
 	
-	//constructor
+
 	Profile()
 	{
 
@@ -107,4 +107,8 @@ public class Profile {
 		double bmi = weight/(length*length);
 		return "Your BMI is "+ bmi;
 	}
+	
+	
+	
+
 }
