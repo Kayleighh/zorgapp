@@ -1,6 +1,7 @@
 package zorgapp;
 
-
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public class Profile {
 
@@ -10,20 +11,24 @@ public class Profile {
 	private double length;
 	private double weight;
 
-	Profile() {
-
+	Profile(String firstname, String lastname, int age, double length, double weight) {
+		this.FirstName = firstname;
+		this.LastName = lastname;
+		this.age = age;
+		this.length = length;
+		this.weight = weight;
 	}
 
+	Profile(){
+	}
 	public void setFirstName(String firstname) {
-		
+
 		this.FirstName = firstname;
 	}
-
 
 	public String getFirstName() {
 		return FirstName;
 	}
-
 
 	public void setLastName(String lastName) {
 		this.LastName = lastName;
@@ -42,7 +47,6 @@ public class Profile {
 		return age;
 	}
 
-
 	public void setLength(Double length) {
 		this.length = length;
 
@@ -51,7 +55,6 @@ public class Profile {
 	public double getLength() {
 		return length;
 	}
-
 
 	public void setWeight(double weight) {
 		this.weight = weight;
@@ -62,10 +65,12 @@ public class Profile {
 		return weight;
 	}
 
-	// functie om de bmi uit te rekenen
+	
 	public String getBmi() {
 		double bmi = weight / (length * length);
-		return "Your BMI is " + bmi;
+		DecimalFormat df = new DecimalFormat("#.#");
+		df.setRoundingMode(RoundingMode.CEILING);
+		return "Your BMI is " + df.format(bmi);
 	}
 
 }
