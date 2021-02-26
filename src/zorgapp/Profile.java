@@ -3,14 +3,18 @@ package zorgapp;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
-public class Profile {
+public class Profile implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String FirstName;
 	private String LastName;
 	private int age;
 	private double length;
 	private double weight;
-
+	
 	Profile(String firstname, String lastname, int age, double length, double weight) {
 		this.FirstName = firstname;
 		this.LastName = lastname;
@@ -72,5 +76,9 @@ public class Profile {
 		df.setRoundingMode(RoundingMode.CEILING);
 		return "Your BMI is " + df.format(bmi);
 	}
+	@Override
+	public String toString() {
+        return "Name:" + FirstName + " " + LastName +" " + "\nAge: " + age + "\nlength: " + length + "\nWeight: " + weight + "\nBmi:" + getBmi();
+    }
 
 }

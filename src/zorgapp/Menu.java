@@ -62,8 +62,7 @@ public class Menu {
 			String firstname = scanner.nextLine();
 			profile.setFirstName(firstname);
 			System.out.println("First name has been changed to " + firstname);
-
-			profileList.add(profile);
+			profileList.edit(0, firstname);
 			createMenu();
 			break;
 		case 3:
@@ -80,7 +79,7 @@ public class Menu {
 	private void staffMenu() {
 		try {
 			System.out.println("WHAT DO YOU WANT TO DO?");
-			System.out.println("1:View data  2:Edit data   3:Go back ");
+			System.out.println("1:View data  2:Add a new patient  3:Go back ");
 
 			int zorgChoice = scanner.nextInt();
 			scanner.nextLine();
