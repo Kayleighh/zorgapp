@@ -19,8 +19,9 @@ public class Profile {
 		this.weight = weight;
 	}
 
-	Profile(){
+	Profile() {
 	}
+
 	public void setFirstName(String firstname) {
 
 		this.FirstName = firstname;
@@ -65,7 +66,6 @@ public class Profile {
 		return weight;
 	}
 
-	
 	public String getBmi() {
 		double bmi = weight / (length * length);
 		DecimalFormat df = new DecimalFormat("#.#");

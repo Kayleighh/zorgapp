@@ -15,4 +15,5 @@ public class Program {
 //Get method aanpassen  --> DONE
 //Final opzoeken
 //exception handeling -->DONE
-//Code reduceren
+//Code reduceren---> Busy
+//Read and write to file
