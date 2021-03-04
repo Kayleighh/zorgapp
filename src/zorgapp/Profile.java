@@ -3,19 +3,21 @@ package zorgapp;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
-public class Profile implements java.io.Serializable {
+public class Profile
+{
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	private String FirstName;
-	private String LastName;
-	private int age;
-	private double length;
-	private double weight;
-	
-	Profile(String firstname, String lastname, int age, double length, double weight) {
+
+	private String	FirstName;
+	private String	LastName;
+	private int		age;
+	private double	length;
+	private double	weight;
+
+	Profile(String firstname, String lastname, int age, double length, double weight)
+	{
 		this.FirstName = firstname;
 		this.LastName = lastname;
 		this.age = age;
@@ -23,62 +25,79 @@ public class Profile implements java.io.Serializable {
 		this.weight = weight;
 	}
 
-	Profile() {
+	Profile()
+	{
 	}
 
-	public void setFirstName(String firstname) {
+	public void setFirstName(String firstname)
+	{
 
 		this.FirstName = firstname;
 	}
 
-	public String getFirstName() {
+	public String getFirstName()
+	{
 		return FirstName;
 	}
 
-	public void setLastName(String lastName) {
+	public void setLastName(String lastName)
+	{
 		this.LastName = lastName;
 	}
 
-	public String getLastName() {
+	public String getLastName()
+	{
 		return LastName;
 	}
 
-	public void setAge(int age) {
+	public void setAge(int age)
+	{
 		this.age = age;
 
 	}
 
-	public int getAge() {
+	public int getAge()
+	{
 		return age;
 	}
 
-	public void setLength(Double length) {
+	public void setLength(Double length)
+	{
 		this.length = length;
 
 	}
 
-	public double getLength() {
+	public double getLength()
+	{
 		return length;
 	}
 
-	public void setWeight(double weight) {
+	public void setWeight(double weight)
+	{
 		this.weight = weight;
 
 	}
 
-	public double getWeight() {
+	public double getWeight()
+	{
 		return weight;
 	}
 
-	public String getBmi() {
+	public String getBmi()
+	{
 		double bmi = weight / (length * length);
 		DecimalFormat df = new DecimalFormat("#.#");
 		df.setRoundingMode(RoundingMode.CEILING);
 		return "Your BMI is " + df.format(bmi);
 	}
-	@Override
-	public String toString() {
-        return "Name:" + FirstName + " " + LastName +" " + "\nAge: " + age + "\nlength: " + length + "\nWeight: " + weight + "\nBmi:" + getBmi();
-    }
+
+	public String toString()
+	{
+
+		return "Name:" + FirstName + " " + LastName + " " + "\nAge: " + age + "\nlength: " + length + "\nWeight: "
+				+ weight + "\nBmi:" + getBmi();
+	}
+
+	
 
 }

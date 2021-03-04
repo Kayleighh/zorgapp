@@ -2,56 +2,90 @@ package zorgapp;
 
 import java.util.ArrayList;
 
-public class ProfileList {
+public class ProfileList
+{
 
-	ArrayList<Profile> prof = new ArrayList<>();
-	public Medicine medicine = new Medicine();
-	public Files file = new Files();
-	ProfileList() {
+	/**
+	 * 
+	 */
 
+	private ArrayList<Object>	prof	= new ArrayList<>();
+	private Files				file	= new Files();
+	public boolean chechedUser;
+	ProfileList()
+	{
+		Profile addProfile = new Profile("Kayleigh", "Reeringh", 22, 1.54, 60);
+		Medicine addMed = new Medicine("Escilatopram", "Helps with depression and anxiety disorder", "Pills", "10mg");
+		Object newProfileWithMeds = addProfile + "" + addMed;
+		prof.add(newProfileWithMeds);
 	}
 
-	public Profile add(Profile profile) {
-		Profile test2 = new Profile(profile.getFirstName(), profile.getLastName(), profile.getAge(),
+	public void add(Profile profile, Medicine medicine)
+	{
+		Profile addProfile = new Profile(profile.getFirstName(), profile.getLastName(), profile.getAge(),
 				profile.getLength(), profile.getWeight());
-		test2.toString();
-		prof.add(test2);
-		file.write(test2);
-		return profile;
+
+		Medicine addMed = new Medicine(medicine.getMedicineName(), medicine.getDescription(), medicine.getSoort(),
+				medicine.getDosage());
+
+		Object newProfileWithMeds = addProfile + "" + addMed;
+		prof.add(newProfileWithMeds);
+
+		// write(newProfileWithMeds);
 
 	}
 
-	// Functie aanpassen.
-	public Profile get(int index) {
-		Profile test = prof.get(index);
-		System.out.println(test.getFirstName() + " " + test.getLastName() + " " + test.getAge() + " " + test.getLength()
-				+ " " + test.getWeight() + " " + test.getBmi());
-		return test;
-
+	// Writes object to file
+	public void write(Object newProfileWithMeds)
+	{
+		file.write(newProfileWithMeds);
 	}
 
-	// Functie aanpassen.
-	public void getAllProfiles() {
-		file.read();
-		/*for (Profile test : prof) {
-			int index = prof.indexOf(test);
-			System.out.println(index + " " + test.getFirstName() + " " + test.getLastName());
-		}*/
-
+	// Gets specific profile+meds from arraylist
+	public Object get(int index)
+	{
+		for (int i = 0; i < sizeOf(); i++)
+		{
+			if (i == index)
+			{
+				System.out.println(prof.get(i));
+				return prof.get(i);
+			}
+		}
+		return 1;
 	}
 
-	public Profile remove(int index) {
-		Profile rem = prof.remove(index);
-		return rem;
+	// Gets all profiles from arraylist/file
+	// Needs work
+	public void getAllProfile()
+	{
+		// file.read();
+		for (Object profile : prof)
+		{
+			int index = prof.indexOf(profile);
+			System.out.println("Patient number: " + index + "\n" + profile);
+		}
 	}
 
-	public int sizeOf() {
+	public void edit(int index, Profile profile, Medicine med)
+	{
+		prof.get(index);
+		String editedProfile = "" + profile + "" + med;
+		prof.set(index, editedProfile);
+	}
+
+	public int sizeOf()
+	{
 		int size = prof.size();
 		return size;
 	}
 
-	public void edit(int index, String test) {
-		prof.get(index).setFirstName(test);
+	// Needs work
+	
+
+	public void remove(int index)
+	{
+		prof.remove(index);
 
 	}
 }
