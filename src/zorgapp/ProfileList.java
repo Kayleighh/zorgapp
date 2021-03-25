@@ -6,12 +6,11 @@ public class ProfileList
 {
 
 	/**
-	 * 
+	 * CURRENTLY NOT USED
 	 */
 
 	private ArrayList<Object>	prof	= new ArrayList<>();
-	private Files				file	= new Files();
-	public boolean chechedUser;
+
 	ProfileList()
 	{
 		Profile addProfile = new Profile("Kayleigh", "Reeringh", 22, 1.54, 60);
@@ -35,13 +34,7 @@ public class ProfileList
 
 	}
 
-	// Writes object to file
-	public void write(Object newProfileWithMeds)
-	{
-		file.write(newProfileWithMeds);
-	}
-
-	// Gets specific profile+meds from arraylist
+	// Done
 	public Object get(int index)
 	{
 		for (int i = 0; i < sizeOf(); i++)
@@ -55,8 +48,7 @@ public class ProfileList
 		return 1;
 	}
 
-	// Gets all profiles from arraylist/file
-	// Needs work
+	// Done
 	public void getAllProfile()
 	{
 		// file.read();
@@ -79,9 +71,6 @@ public class ProfileList
 		int size = prof.size();
 		return size;
 	}
-
-	// Needs work
-	
 
 	public void remove(int index)
 	{

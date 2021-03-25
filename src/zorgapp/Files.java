@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
 public class Files implements java.io.Serializable
 {
 	/**
-	 * 
+	 * Don't forget about serialization.
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -22,9 +22,14 @@ public class Files implements java.io.Serializable
 	{
 		try
 		{
+			//Make new while.
 			File f = new File("profiles.txt");
+			
+			//When second parameter is true, appending to the file is made possible.
+			//Which means you can add multiple objects to a file.
 			FileOutputStream fileOut = new FileOutputStream(f, true);
 			ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+			//Write object
 			objectOut.writeObject(prof);
 
 			objectOut.close();

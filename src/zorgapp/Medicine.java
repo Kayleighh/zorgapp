@@ -6,10 +6,10 @@ public class Medicine
 	 * 
 	 */
 
-	private String				medicineName;
-	private String				description;
-	private String				soort;
-	private String				dosage;
+	private String	medicineName;
+	private String	description;
+	private String	soort;
+	private String	dosage;
 
 	Medicine()
 	{
