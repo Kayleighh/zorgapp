@@ -3,7 +3,7 @@ package zorgapp;
 public class Medicine
 {
 	/**
-	 * 
+	 * In deze klasse wordt een medicijn gedefinieerd
 	 */
 
 	private String	medicineName;
@@ -11,17 +11,9 @@ public class Medicine
 	private String	soort;
 	private String	dosage;
 
-	Medicine()
+	public Medicine()
 	{
 
-	}
-
-	Medicine(String name, String desc, String soort, String dosage)
-	{
-		medicineName = name;
-		description = desc;
-		this.soort = soort;
-		this.dosage = dosage;
 	}
 
 	public void setMedicineName(String name)
@@ -64,9 +56,4 @@ public class Medicine
 		return dosage;
 	}
 
-	public String toString()
-	{
-		return "\nMedication name: " + medicineName + " " + "\nDescription: " + description + "\nSoort: " + soort
-				+ "\nDosage: " + dosage;
-	}
 }
